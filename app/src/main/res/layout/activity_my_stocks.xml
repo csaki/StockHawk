@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
-  <android.support.v7.widget.RecyclerView
-      android:id="@+id/recycler_view"
+  <RelativeLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      />
+      android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MessageError"
+        android:id="@+id/tv_no_network_connection"
+        android:text="@string/network_toast"
+        android:visibility="gone"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_no_network_connection"
+        />
+
+  </RelativeLayout>
 
   <com.melnykov.fab.FloatingActionButton
       android:id="@+id/fab"
@@ -27,4 +40,5 @@
       fab:layout_anchor="recycler_view"
       fab:layout_anchorGravity="bottom | end"
       />
+
 </FrameLayout>
