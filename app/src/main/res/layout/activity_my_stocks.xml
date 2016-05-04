@@ -14,7 +14,8 @@
         style="@style/MessageError"
         android:id="@+id/tv_no_network_connection"
         android:text="@string/network_toast"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:contentDescription="@string/network_toast"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -39,6 +40,7 @@
       fab:fab_type="normal"
       fab:layout_anchor="recycler_view"
       fab:layout_anchorGravity="bottom | end"
+      android:contentDescription="@string/add_stock"
       />
 
 </FrameLayout>
