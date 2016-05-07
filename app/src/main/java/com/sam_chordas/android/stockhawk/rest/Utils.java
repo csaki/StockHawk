@@ -4,7 +4,12 @@ import android.content.ContentProviderOperation;
 import android.util.Log;
 import com.sam_chordas.android.stockhawk.data.QuoteColumns;
 import com.sam_chordas.android.stockhawk.data.QuoteProvider;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -81,6 +86,8 @@ public class Utils {
           jsonObject.getString("ChangeinPercent"), true));
       builder.withValue(QuoteColumns.CHANGE, truncateChange(change, false));
       builder.withValue(QuoteColumns.ISCURRENT, 1);
+      Calendar c = Calendar.getInstance();
+      builder.withValue(QuoteColumns.CREATED, c.getTimeInMillis());
       if (change.charAt(0) == '-'){
         builder.withValue(QuoteColumns.ISUP, 0);
       }else{
@@ -91,5 +98,19 @@ public class Utils {
       e.printStackTrace();
     }
     return builder.build();
+  }
+
+  public static String extractDateLabel(long timeInMillis){
+    Calendar c = Calendar.getInstance();
+
+    Date date = new Date(timeInMillis);
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+
+    if(sdf.format(c.getTime()).equals(sdf.format(date))){
+      sdf = new SimpleDateFormat("HH:mm");
+    }else{
+      sdf = new SimpleDateFormat("MM/dd");
+    }
+    return sdf.format(date);
   }
 }

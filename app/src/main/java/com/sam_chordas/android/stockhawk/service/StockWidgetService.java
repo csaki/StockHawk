@@ -4,7 +4,6 @@ import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.hardware.camera2.params.StreamConfigurationMap;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -12,6 +11,7 @@ import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.data.QuoteColumns;
 import com.sam_chordas.android.stockhawk.data.QuoteProvider;
 import com.sam_chordas.android.stockhawk.rest.Utils;
+import com.sam_chordas.android.stockhawk.ui.StockGraphActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +72,9 @@ public class StockWidgetService extends RemoteViewsService {
             } else {
                 row.setInt(R.id.change, "setBackgroundResource", R.drawable.percent_change_pill_red);
             }
+            Intent intent = new Intent(ctxt, StockGraphActivity.class);
+            intent.putExtra(StockGraphActivity.INTENT_STOCK_PARAM, symbol);
+            row.setOnClickFillInIntent(R.id.ll, intent);
             return row;
         }
 

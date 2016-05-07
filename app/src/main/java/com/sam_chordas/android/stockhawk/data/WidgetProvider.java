@@ -11,6 +11,7 @@ import android.widget.RemoteViews;
 import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.service.StockWidgetService;
 import com.sam_chordas.android.stockhawk.ui.MyStocksActivity;
+import com.sam_chordas.android.stockhawk.ui.StockGraphActivity;
 
 /**
  * Created by neko on 04/05/2016.
@@ -30,7 +31,7 @@ public class WidgetProvider extends AppWidgetProvider {
 
             widget.setRemoteAdapter(R.id.listview,
                     svcIntent);
-            Intent clickIntent=new Intent(ctxt, MyStocksActivity.class);
+            Intent clickIntent=new Intent(ctxt, StockGraphActivity.class);
             PendingIntent clickPI=PendingIntent
                     .getActivity(ctxt, 0,
                             clickIntent,

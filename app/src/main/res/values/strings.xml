@@ -11,5 +11,6 @@
   <string name="input_prefill"></string>
   <string name="item_content_description">Stock %1$s. Current price %2$s. Change %3$s.</string>
   <string name="add_stock">Add an stock</string>
+  <string name="to">To</string>
   <string name="network_toast">Uh-oh! This app requires an internet connection</string>
 </resources>
