@@ -1,13 +1,14 @@
 <resources>
-  <string name="app_name">Stock Hawk EG</string>
-
   <string name="action_example">Example action EG</string>
 
   <string name="action_settings">Settings EG</string>
   <string name="action_change_units">Change Units EG</string>
   <string name="symbol_search">Symbol Search EG</string>
   <string name="content_test">Search for a Stock Symbol EG</string>
-  <string name="input_hint">FB EG</string>
-  <string name="input_prefill"></string>
+  <string name="item_content_description">Stock %1$s. Current price %2$s. Change %3$s. EG</string>
+  <string name="add_stock">Add an stock EG</string>
   <string name="network_toast">Uh-oh! This app requires an internet connection EG</string>
+  <string name="not_selected_stock">Not selected stock! EG</string>
+  <string name="stock_already_saved">This stock is already saved! EG</string>
+  <string name="stock_cant_be_empty">Stock can\'t be empty! EG</string>
 </resources>

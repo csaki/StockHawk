@@ -43,7 +43,7 @@ public class StockGraphActivity extends AppCompatActivity implements LoaderManag
 
         if(currentStock==null){
             Toast toast =
-                    Toast.makeText(StockGraphActivity.this, "Not selected stock!",
+                    Toast.makeText(StockGraphActivity.this, R.string.not_selected_stock,
                             Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
             toast.show();
